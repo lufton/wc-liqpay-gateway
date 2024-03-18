@@ -285,7 +285,7 @@ function woocommerce_init_liqpay() {
                         break;
                     case 'failure':
                         $order->update_status( 'failed', __( 'Невдалий платіж', 'wc-gateway-liqpay' ) );
-                        $order_note = __( 'Невдалий платіж, неправильно заповнені дані.', 'wc-gateway-liqpay' );
+                        $order_note = __( 'Невдалий платіж, неправильно заповнені дані', 'wc-gateway-liqpay' );
                         break;
                 }
 
