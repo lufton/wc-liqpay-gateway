@@ -20,8 +20,8 @@ function woocommerce_init_liqpay() {
             $this->id                 = 'liqpay';
             $this->has_fields         = false;
             $this->icon               = apply_filters( 'woocommerce_liqpay_icon', plugin_dir_url(__FILE__) . '/assets/img/liqpay.png' );
-            $this->method_title       = __( 'Liqpay', 'wc-gateway-liqpay' );
-            $this->method_description = __( 'Liqpay', 'wc-gateway-liqpay' );
+            $this->method_title       = __( 'LiqPay', 'wc-gateway-liqpay' );
+            $this->method_description = __( 'LiqPay', 'wc-gateway-liqpay' );
             $this->init_form_fields();
             $this->init_settings();
             $this->title              =  $this->get_option( 'title' );
@@ -49,7 +49,7 @@ function woocommerce_init_liqpay() {
         public function admin_options() {
           ?>
 
-          <h3><?php _e( 'Liqpay', 'wc-gateway-liqpay' ); ?></h3>
+          <h3><?php _e( 'LiqPay', 'wc-gateway-liqpay' ); ?></h3>
 
           <table class="form-table">
               <?php $this->generate_settings_html(); ?>
@@ -70,24 +70,24 @@ function woocommerce_init_liqpay() {
                     'title'       => __( 'Заголовок', 'wc-gateway-liqpay' ),
                     'type'        => 'text',
                     'description' => __( 'Заголовок, який відображатиметься на сторінці оформлення замовлення.', 'wc-gateway-liqpay' ),
-                    'default'     => __( 'Liqpay', 'wc-gateway-liqpay' ),
+                    'default'     => __( 'LiqPay', 'wc-gateway-liqpay' ),
                     'desc_tip'    => true,
                 ),
                 'description' => array(
                     'title'       => __( 'Опис', 'wc-gateway-liqpay' ),
                     'type'        => 'textarea',
                     'description' => __( 'Опис, який відображатиметься в процесі вибору способу оплати.', 'wc-gateway-liqpay' ),
-                    'default'     => __( 'Оплата за допомогою платіжної системи Liqpay', 'wc-gateway-liqpay' ),
+                    'default'     => __( 'Оплата за допомогою платіжної системи LiqPay', 'wc-gateway-liqpay' ),
                 ),
                 'public_key'  => array(
                     'title'       => __( 'Public key', 'wc-gateway-liqpay' ),
                     'type'        => 'text',
-                    'description' => __( 'Публічний ключ - ідентифікатор магазину. Отримати ключ можна в особистому кабінеті Liqpay.', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Публічний ключ - ідентифікатор магазину. Отримати ключ можна в особистому кабінеті LiqPay.', 'wc-gateway-liqpay' ),
                 ),
                 'private_key' => array(
                     'title'       => __( 'Private key', 'wc-gateway-liqpay' ),
                     'type'        => 'text',
-                    'description' => __( 'Приватний ключ. Отримати ключ можна в особистому кабінеті Liqpay.', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Приватний ключ. Отримати ключ можна в особистому кабінеті LiqPay.', 'wc-gateway-liqpay' ),
                 ),
                 'fee' => array(
                     'title'       => __( 'Утримати комісію', 'wc-gateway-liqpay' ),
@@ -107,7 +107,7 @@ function woocommerce_init_liqpay() {
                     'type'        => 'checkbox',
                     'label'       => __( 'Включити', 'wc-gateway-liqpay' ),
                     'default'     => 'no',
-                    'description' => __( 'Автоматично перенаправляти користувача на сторінку оплати системи Liqpay.', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Автоматично перенаправляти користувача на сторінку оплати системи LiqPay.', 'wc-gateway-liqpay' ),
                 )
             );
         }
@@ -266,7 +266,7 @@ function woocommerce_init_liqpay() {
                 $order = new WC_Order( $order_id );
 
                 if ( $received_signature !== $generated_signature || $received_public_key !== $this->_public_key ) {
-                    wp_die( __( 'IPN Response Error' ), 'Liqpay IPN', array( 'response' => 500 ) );
+                    wp_die( __( 'IPN Response Error' ), 'LiqPay IPN', array( 'response' => 500 ) );
                 }
 
                 // Handle order status and add order notes
@@ -292,7 +292,7 @@ function woocommerce_init_liqpay() {
                 $order->add_order_note( $order_note );
 
             } else {
-                wp_die( __( 'IPN Request Failure.', 'wc_lp' ), 'Liqpay IPN', array( 'response' => 500 ) );
+                wp_die( __( 'IPN Request Failure.', 'wc_lp' ), 'LiqPay IPN', array( 'response' => 500 ) );
             }
         }
     }
