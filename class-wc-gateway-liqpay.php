@@ -61,53 +61,53 @@ function woocommerce_init_liqpay() {
 
             $this->form_fields = array(
                 'enabled'     => array(
-                    'title'       => __( 'Включить/Выключить', 'wc-gateway-liqpay' ),
+                    'title'       => __( 'Включити/Виключити', 'wc-gateway-liqpay' ),
                     'type'        => 'checkbox',
-                    'label'       => __( 'Включить', 'wc-gateway-liqpay' ),
+                    'label'       => __( 'Включити', 'wc-gateway-liqpay' ),
                     'default'     => 'yes'
                 ),
                 'title'       => array(
                     'title'       => __( 'Заголовок', 'wc-gateway-liqpay' ),
                     'type'        => 'text',
-                    'description' => __( 'Заголовок, который отображается на странице оформления заказа.', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Заголовок, який відображатиметься на сторінці оформлення замовлення.', 'wc-gateway-liqpay' ),
                     'default'     => __( 'Liqpay', 'wc-gateway-liqpay' ),
                     'desc_tip'    => true,
                 ),
                 'description' => array(
-                    'title'       => __( 'Описание', 'wc-gateway-liqpay' ),
+                    'title'       => __( 'Опис', 'wc-gateway-liqpay' ),
                     'type'        => 'textarea',
-                    'description' => __( 'Описание, которое отображается в процессе выбора формы оплаты.', 'wc-gateway-liqpay' ),
-                    'default'     => __( 'Оплатить через электронную платежную систему Liqpay', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Опис, який відображатиметься в процесі вибору способу оплати.', 'wc-gateway-liqpay' ),
+                    'default'     => __( 'Оплата за допомогою платіжної системи Liqpay', 'wc-gateway-liqpay' ),
                 ),
                 'public_key'  => array(
                     'title'       => __( 'Public key', 'wc-gateway-liqpay' ),
                     'type'        => 'text',
-                    'description' => __( 'Публичный ключ - идентификатор магазина. Получить ключ можно в личном кабинете Liqpay.', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Публічний ключ - ідентифікатор магазину. Отримати ключ можна в особистому кабінеті Liqpay.', 'wc-gateway-liqpay' ),
                 ),
                 'private_key' => array(
                     'title'       => __( 'Private key', 'wc-gateway-liqpay' ),
                     'type'        => 'text',
-                    'description' => __( 'Приватный ключ. Получить ключ можно в личном кабинете Liqpay.', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Приватний ключ. Отримати ключ можна в особистому кабінеті Liqpay.', 'wc-gateway-liqpay' ),
                 ),
                 'fee' => array(
-                    'title'       => __( 'Удержать комиссию', 'wc-gateway-liqpay' ),
+                    'title'       => __( 'Утримати комісію', 'wc-gateway-liqpay' ),
                     'type'        => 'number',
-					'default'     => '2.75',
-                    'description' => __( 'Размер в процентах удерживаемой с покупателя комиссии за пользование платёжной системы. Укажите отличное от 0 значение, если хотите чтобы после снятия указанного процента вы получили полную сумму заказа.', 'wc-gateway-liqpay' ),
+                    'default'     => '2.75',
+                    'description' => __( 'Розмір у відсотках утримуваної з покупця комісії за використання платіжної системи. Вкажіть значення відмінне від 0, якщо хочете щоб після зняття вказаного відсотка ви отримали повну суму замовлення.', 'wc-gateway-liqpay' ),
                 ),
                 'sandbox'     => array(
                     'title'       => __( 'Демо оплата', 'wc-gateway-liqpay' ),
                     'type'        => 'checkbox',
-                    'label'       => __( 'Включить', 'wc-gateway-liqpay' ),
+                    'label'       => __( 'Включити', 'wc-gateway-liqpay' ),
                     'default'     => 'no',
-                    'description' => __( 'Включить демо оплату в магазине. Деньги на карту не зачисляются.', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Включити демо оплату в магазині. Гроші на карту не зараховуються.', 'wc-gateway-liqpay' ),
                 ),
                 'skip_submit'     => array(
-                    'title'       => __( 'Авторедирект на страницу оплаты', 'wc-gateway-liqpay' ),
+                    'title'       => __( 'Авторедирект на сторінку оплати', 'wc-gateway-liqpay' ),
                     'type'        => 'checkbox',
-                    'label'       => __( 'Включить', 'wc-gateway-liqpay' ),
+                    'label'       => __( 'Включити', 'wc-gateway-liqpay' ),
                     'default'     => 'no',
-                    'description' => __( 'Автоматически направлять пользователя на страницу оплаты системы Liqpay', 'wc-gateway-liqpay' ),
+                    'description' => __( 'Автоматично перенаправляти користувача на сторінку оплати системи Liqpay.', 'wc-gateway-liqpay' ),
                 )
             );
         }
@@ -154,7 +154,7 @@ function woocommerce_init_liqpay() {
                 $params['sandbox'] = '1';
             }
 
-            echo '<p>'.__( 'Спасибо за Ваш заказ, пожалуйста, нажмите кнопку ниже, чтобы заплатить.', 'wc-gateway-liqpay' ).'</p>';
+            echo '<p>'.__( 'Дякуємо за Ваше замовлення, будь ласка, натисніть на кнопку нижче для оплати.', 'wc-gateway-liqpay' ).'</p>';
             echo $this->generate_form( $params );
         }
 
@@ -231,8 +231,8 @@ function woocommerce_init_liqpay() {
                         jQuery("#' . $this->id . '_payment_form").submit(); 
                       })
                     </script>',
-                    __( 'Спасибо за заказ', 'wc-gateway-liqpay' ),
-                    __( 'Сейчас Вы будете перенаправлены на страницу оплаты.', 'wc-gateway-liqpay' )
+                    __( 'Дякуємо за замовлення', 'wc-gateway-liqpay' ),
+                    __( 'Зараз Вас буде перенаправлено на сторінку оплати.', 'wc-gateway-liqpay' )
                 );
 
                 $template .= $skip_script;
@@ -276,16 +276,16 @@ function woocommerce_init_liqpay() {
                         $order_note = __( 'Платёж успешно выполнен', 'wc-gateway-liqpay' );
                         break;
                     case 'sandbox':
-                        $order->update_status( 'completed', __( 'Тестовый платёж завершен', 'wc-gateway-liqpay' ) );
-                        $order_note = __( 'Тестовый платёж успешно выполнен', 'wc-gateway-liqpay' );
+                        $order->update_status( 'completed', __( 'Тесовий платіж завершено', 'wc-gateway-liqpay' ) );
+                        $order_note = __( 'Тестовий платіж успішно виконано', 'wc-gateway-liqpay' );
                         break;
                     case 'error':
-                        $order->update_status( 'failed', __( 'Платёж не выполнен', 'wc-gateway-liqpay' ) );
-                        $order_note = __( 'Платёж не удался', 'wc-gateway-liqpay' );
+                        $order->update_status( 'failed', __( 'Невдалий платіж', 'wc-gateway-liqpay' ) );
+                        $order_note = __( 'Невдалий платіж', 'wc-gateway-liqpay' );
                         break;
                     case 'failure':
-                        $order->update_status( 'failed', __( 'Платёж не выполнен', 'wc-gateway-liqpay' ) );
-                        $order_note = __( 'Неуспешный платеж. Некорректно заполнены данные', 'wc-gateway-liqpay' );
+                        $order->update_status( 'failed', __( 'Невдалий платіж', 'wc-gateway-liqpay' ) );
+                        $order_note = __( 'Невдалий платіж, неправильно заповнені дані.', 'wc-gateway-liqpay' );
                         break;
                 }
 
