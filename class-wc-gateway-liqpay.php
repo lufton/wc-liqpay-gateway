@@ -273,7 +273,7 @@ function woocommerce_init_liqpay() {
                 switch ($status) {
                     case 'success':
                         $order->payment_complete();
-                        $order_note = __( 'Платёж успешно выполнен', 'wc-gateway-liqpay' );
+                        $order_note = __( 'Платіж успішно виконано', 'wc-gateway-liqpay' );
                         break;
                     case 'sandbox':
                         $order->update_status( 'completed', __( 'Тесовий платіж завершено', 'wc-gateway-liqpay' ) );
